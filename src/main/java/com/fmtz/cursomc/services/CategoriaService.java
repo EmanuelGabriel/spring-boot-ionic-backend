@@ -22,6 +22,12 @@ public class CategoriaService {
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
 		"Objeto não encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName()));
 		}
+	
+	public Categoria insert(Categoria obj) {
+		//o id nulo é pro método save entender que é uma inserção, se passassemos um id ele entenderia como uma atualização
+		obj.setId(null);
+		return repo.save(obj);
+	}
 
 	
 
