@@ -11,7 +11,6 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.fmtz.cursomc.domain.Cliente;
-import com.fmtz.cursomc.domain.Cliente;
 import com.fmtz.cursomc.dto.ClienteDTO;
 import com.fmtz.cursomc.repositories.ClienteRepository;
 import com.fmtz.cursomc.services.exceptions.DataIntegrityException;
@@ -68,7 +67,6 @@ public class ClienteService {
 	}
 	
 	private void updateData(Cliente newObj, Cliente obj) {
-		
 		newObj.setNome(obj.getNome());
 		newObj.setEmail(obj.getEmail());
 		
