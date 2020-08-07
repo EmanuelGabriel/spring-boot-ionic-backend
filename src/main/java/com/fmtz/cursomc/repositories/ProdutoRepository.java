@@ -19,7 +19,7 @@ public interface ProdutoRepository extends JpaRepository<Produto, Integer>{
 	
 	@Transactional(readOnly = true)
 	//Usando padrões de nomes a mesma Query que fizemos acima ficaria da seguinte forma
-	Page<Produto> findDistinctByNomeContainingAndCategoriasIn(String nome, List<Categoria> categorias, Pageable pageRequest);
+	Page<Produto> findDistinctByNomeContainingIgnoreCaseAndCategoriasIn(String nome, List<Categoria> categorias, Pageable pageRequest);
 	
 	
 }
