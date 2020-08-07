@@ -22,7 +22,4 @@ public class PedidoService {
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
 		"Objeto não encontrado! Id: " + id + ", Tipo: " + Pedido.class.getName()));
 		}
-
-	
-
 }
