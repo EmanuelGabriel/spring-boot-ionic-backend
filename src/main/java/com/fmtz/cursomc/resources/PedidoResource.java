@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.fmtz.cursomc.domain.Pedido;
-import com.fmtz.cursomc.domain.Pedido;
-import com.fmtz.cursomc.dto.PedidoDTO;
 import com.fmtz.cursomc.services.PedidoService;
 
 @RestController
