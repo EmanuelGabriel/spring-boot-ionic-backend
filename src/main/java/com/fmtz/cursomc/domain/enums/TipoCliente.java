@@ -11,7 +11,7 @@ public enum TipoCliente {
 	private TipoCliente(int cod, String descricao) {
 		this.cod = cod;
 		this.descricao = descricao;
-		
+
 	}
 	
 	public int getCod() {
