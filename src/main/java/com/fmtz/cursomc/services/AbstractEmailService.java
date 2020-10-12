@@ -1,6 +1,5 @@
 package com.fmtz.cursomc.services;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Value;
