@@ -34,11 +34,10 @@ public class PedidoService {
 	@Autowired
 	private PagamentoRepository pagamentoRepository;
 	
-	
 	@Autowired
 	private ItemPedidoRepository itemPedidoRepository;
 	
-	@Autowired
+	@Autowired(required = true)
 	private EmailService emailService;
 	
 	

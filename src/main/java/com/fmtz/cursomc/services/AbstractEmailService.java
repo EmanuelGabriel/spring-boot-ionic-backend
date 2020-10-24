@@ -10,11 +10,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
 import com.fmtz.cursomc.domain.Pedido;
 
+@Service
 public abstract class AbstractEmailService implements EmailService {
 	
 	@Value("${default.sender}") //permite acessar o emissor padrão de emails que defini para a aplicação

@@ -9,6 +9,8 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fmtz.cursomc.domain.PagamentoComBoleto;
 import com.fmtz.cursomc.domain.PagamentoComCartao;
+import com.fmtz.cursomc.services.EmailService;
+import com.fmtz.cursomc.services.SmtpEmailService;
 
 @Configuration
 public class JacksonConfig {
@@ -28,5 +30,11 @@ public class JacksonConfig {
 	@Bean
 	public JavaMailSender jMS (){
 		return new JavaMailSenderImpl();
+	}
+	
+	//EM OBS
+	@Bean
+	public EmailService emailService() {
+		return new SmtpEmailService();
 	}
 }
