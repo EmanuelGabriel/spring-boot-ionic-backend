@@ -31,10 +31,4 @@ public class JacksonConfig {
 	public JavaMailSender jMS (){
 		return new JavaMailSenderImpl();
 	}
-	
-	//EM OBS
-	@Bean
-	public EmailService emailService() {
-		return new SmtpEmailService();
-	}
 }
