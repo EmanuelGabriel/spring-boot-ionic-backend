@@ -37,8 +37,5 @@ public static EstadoPagamento toEnum(Integer cod) {
 		}
 		
 		throw new IllegalArgumentException("Id Inválido: " + cod);
-		
 	}
-
-
 }
