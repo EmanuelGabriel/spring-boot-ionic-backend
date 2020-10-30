@@ -5,6 +5,7 @@ import java.text.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 
 import com.fmtz.cursomc.services.DBService;
@@ -25,6 +26,7 @@ public class TestConfig {
 	}
 	
 	@Bean
+	@Primary
 	public EmailService emailService() {
 		return new MockEmailService();
 	}
