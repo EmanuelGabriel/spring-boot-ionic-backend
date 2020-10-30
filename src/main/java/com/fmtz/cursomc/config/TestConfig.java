@@ -25,9 +25,9 @@ public class TestConfig {
 		return true;
 	}
 	
-	@Bean
-	@Primary
-	public EmailService emailService() {
-		return new MockEmailService();
-	}
+//	@Bean
+//	@Primary
+//	public EmailService emailService() {
+//		return new MockEmailService();
+//	}
 }
