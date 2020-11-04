@@ -13,10 +13,10 @@
 	<artifactId>cursomc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>cursomc</name>
-	<description>Bank Spring Boot com MongoDB</description>
+	<description>E-commerce com SpringBoot + Ionic</description>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>1.8</java.version>
 	</properties>
 
 	<dependencies>
@@ -100,7 +100,6 @@
 			<version>0.7.0</version>
 		</dependency>
 
-		
 
 	</dependencies>
 

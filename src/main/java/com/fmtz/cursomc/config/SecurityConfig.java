@@ -25,13 +25,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	//DECLARAÇÃO DOS ENDPOINTS LIBERADOS POR PADRÃO NO VETOR A SEGUIR:
 	private static final String[] PUBLIC_MATCHERS = {
-			"/h2-console/**",
+			"/h2-console/**"
 	};
 	
 	//DECLARAÇÃO DOS ENDPOINTS LIBERADOS POR PADRÃO (SOMENTE LEITURA):
 		private static final String[] PUBLIC_MATCHERS_GET = {
 				"/produtos/**",
 				"/categorias/**",
+				"/clientes/**"
 		};
 	
 	//DEFINIÇÃO DOS ENDPOINTS AUTORIZADOS POR PADRÃO E COM AUTENTICAÇÃO
