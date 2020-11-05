@@ -10,6 +10,8 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
+import com.fmtz.cursomc.domain.Cliente;
+
 @Service
 public class SmtpEmailService extends AbstractEmailService {
 	
@@ -36,6 +38,12 @@ public class SmtpEmailService extends AbstractEmailService {
 		LOG.info("Enviando email...");
 		javaMailSender.send(msg);
 		LOG.info("Email enviado");		
+	}
+
+	@Override
+	public void sendNewPasswordEmail(Cliente cliente, String newPass) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
