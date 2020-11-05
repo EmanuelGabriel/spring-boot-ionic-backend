@@ -17,22 +17,29 @@ public class JWTUtil {
 	private String secret;
 	
 	@Value("${jwt.expiration}")
-	private String expiration;
-	
+	private Long expiration;
 	
 	public String generateToken(String username) {
-
-		Calendar cal = Calendar.getInstance();
-		cal.setTime(new Date());
-		cal.add(Calendar.HOUR_OF_DAY, 1);
-		cal.getTime();
-		
 		return Jwts.builder()
-		.setSubject(username)
-		.setExpiration(cal.getTime())
-		.signWith(SignatureAlgorithm.HS512, secret.getBytes())
-		.compact();
+				.setSubject(username)
+				.setExpiration(new Date(System.currentTimeMillis() + expiration))
+				.signWith(SignatureAlgorithm.HS512, secret.getBytes())
+				.compact();
 	}
+	
+//	public String generateToken(String username) {
+//
+//		Calendar cal = Calendar.getInstance();
+//		cal.setTime(new Date());
+//		cal.add(Calendar.HOUR_OF_DAY, 1);
+//		cal.getTime();
+//		
+//		return Jwts.builder()
+//		.setSubject(username)
+//		.setExpiration(cal.getTime())
+//		.signWith(SignatureAlgorithm.HS512, secret.getBytes())
+//		.compact();
+//	}
 	
 	public boolean tokenValido(String token) {
 		Claims claims = getClaims(token);
