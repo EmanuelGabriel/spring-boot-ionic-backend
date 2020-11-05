@@ -3,7 +3,6 @@ package com.fmtz.cursomc.services;
 import java.util.List;
 import java.util.Optional;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
@@ -16,11 +15,14 @@ import org.springframework.transaction.annotation.Transactional;
 import com.fmtz.cursomc.domain.Cidade;
 import com.fmtz.cursomc.domain.Cliente;
 import com.fmtz.cursomc.domain.Endereco;
+import com.fmtz.cursomc.domain.enums.Perfil;
 import com.fmtz.cursomc.domain.enums.TipoCliente;
 import com.fmtz.cursomc.dto.ClienteDTO;
 import com.fmtz.cursomc.dto.ClienteNewDTO;
 import com.fmtz.cursomc.repositories.ClienteRepository;
 import com.fmtz.cursomc.repositories.EnderecoRepository;
+import com.fmtz.cursomc.security.UserSS;
+import com.fmtz.cursomc.services.exceptions.AuthorizationException;
 import com.fmtz.cursomc.services.exceptions.DataIntegrityException;
 import com.fmtz.cursomc.services.exceptions.ObjectNotFoundException;
 
@@ -37,6 +39,10 @@ public class ClienteService {
 	private EnderecoRepository enderecoRepository;
 	
 	public Cliente find(Integer id) {
+		UserSS user = UserService.authenticated();
+		if(user==null || !user.hasRole(Perfil.ADMIN) && !id.equals(user.getId())) {
+			throw new AuthorizationException("Acesso negado");
+		}
 		Optional<Cliente> obj = repo.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
 				"Objeto não encontrado! Id: " + id + ", Tipo: " + Cliente.class.getName()));
